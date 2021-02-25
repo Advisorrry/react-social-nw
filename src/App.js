@@ -3,21 +3,23 @@ import { Header } from './components/Header/Header'
 import { Navbar } from './components/Navbar/Navbar'
 import './app.scss'
 import { Profile } from './components/Profile/Profile'
-import { MyPosts } from './components/Profile/MyPosts'
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import { Dialog } from './components/Dialogs/Dialog'
 
 function App() {
     return (
-        <Fragment>
-            <Header />
-            <div className="container">
-                <Navbar />
-                <Profile />
-                
-            </div>
-            <div className="container">
-            <MyPosts />
-            </div>
-        </Fragment>
+        <Router>
+            <Fragment>
+                <Header />
+                <div className="app-container">
+                    <Navbar />
+                    <Switch>
+                        <Route path='/profile' component={Profile} />
+                        <Route path="/dialogs" component={Dialog} />
+                    </Switch>
+                </div>
+            </Fragment>
+        </Router>
     )
 }
 
