@@ -1,6 +1,8 @@
 import React from 'react'
 import './profile.scss'
 import ava from '../../assets/img/ava1.png'
+import {AddPosts} from './AddPosts'
+
 
 export  function Profile() {
     return (
@@ -23,6 +25,7 @@ export  function Profile() {
                 </div>
                 
             </div>
+            <AddPosts />
         </div>
     )
 }

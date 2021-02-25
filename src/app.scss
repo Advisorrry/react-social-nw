@@ -2,10 +2,10 @@ body {
     background-color: #edeef0;
 }
 
-.container {
+.app-container {
     max-width: 1024px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start
 }

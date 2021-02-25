@@ -1,5 +1,5 @@
 .navbar {
-    max-width: 200px;
+    margin: 0;
     &__lists {
         
         padding: 1rem;
@@ -7,6 +7,12 @@
             list-style-type: none;
             margin-bottom: 1rem;
             font-size: 25px;
+            text-decoration: none;
+            color:black;
+            &:hover {
+                font-size: 27px;
+                transition: font-size .2s ease;
+            }
             
         }
     }
