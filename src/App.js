@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import { Header } from './components/Header/Header'
+import { Navbar } from './components/Navbar/Navbar'
+import './app.scss'
+
 
 function App() {
     return (
-        <div>
-            <h1>Hello World!</h1>
-        </div>
+        <Fragment>
+            <Header />
+            <div className="container">
+                <Navbar  />
+                <div>gfdgdgd</div>
+            </div>
+        </Fragment>
     )
 }
 
