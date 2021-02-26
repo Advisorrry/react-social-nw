@@ -1,26 +1,46 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { addPostAC } from '../../redux/reducers'
 import './mypost.scss'
 import { MyPosts } from './MyPosts'
 
 export function AddPosts() {
+    const dispatch = useDispatch()
+    const addPostSelector = useSelector((state) => state.addPost.items)
+    const [initialValue, setInitialValue] = React.useState('')
+
+    const handleAddNewPost = () => {
+        if (initialValue === '') {
+            return 
+        }
+        dispatch(addPostAC(initialValue))
+        setInitialValue('')
+    }
+
     return (
         <div className="addposts">
             <div className="addposts__container">
-                <div class="form-floating">
+                <form className="form-floating">
                     <textarea
-                        class="form-control"
+                        className="form-control"
                         placeholder="Leave a comment here"
-                        id="floatingTextarea" 
-                        
-                        />
-                    <label for="floatingTextarea">Новый пост</label>
-                    <button type="button" class="btn btn-primary">Добавить</button>
-                </div>
-            </div>
-            <MyPosts />
-            <MyPosts />
-            <MyPosts />
-            <MyPosts />
+                        id="floatingTextarea"
+                        value={initialValue}
+                        onChange={(e) => setInitialValue(e.target.value)}
+                    />
+                    <label htmlFor="floatingTextarea">Новый пост</label>
+                    <button 
+                        type="button" 
+                        className="btn btn-primary"
+                        onClick={handleAddNewPost}
+                                          
+                    >Добавить
+                    </button>
+                </form>
+                {addPostSelector.map((post, idx) => {
+                    return <MyPosts postText={post} key={idx} />
+                })}
+            </div>         
         </div>
     )
 }
