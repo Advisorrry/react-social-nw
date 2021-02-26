@@ -5,7 +5,7 @@ export function MyPosts() {
         <div className='myposts'>
             <div className="myposts__container">
                 <div className='myposts__text'>
-                    новый пост
+                    Новый пост
                 </div>
             </div>
         </div>
