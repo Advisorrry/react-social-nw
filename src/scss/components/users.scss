@@ -1,0 +1,25 @@
+.users {
+    
+    &__paginator--buttons {
+
+    }
+    &__card {
+        display: flex;
+        justify-content: space-between;
+        
+        &--photo{
+           
+            img {
+                max-width: 120px;
+                margin-bottom: .5rem;
+                
+            }
+        }
+        &--info {
+            height: 2rem;
+            border: 1px solid rgba(184, 148, 231, 0.233);
+            margin-left: 2rem;
+        }
+    }
+    
+}

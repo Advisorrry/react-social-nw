@@ -1,0 +1,13 @@
+@import './components/all.scss';
+
+body {
+    background-color: #edeef0;
+}
+
+.app-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start
+}
