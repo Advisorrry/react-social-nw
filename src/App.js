@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react'
-import { Header } from './components/Header/Header'
+import Header from './components/Header/Header'
 import { Navbar } from './components/Navbar/Navbar'
-import './app.scss'
-import { Profile } from './components/Profile/Profile'
+import './scss/app.scss'
+import { ProfilePage } from './pages/ProfilePage'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
-import { Messenger } from './components/Dialogs/Messenger'
+import { MessengerPage } from './pages/MessengerPage'
+import UsersPage from './pages/UsersPage'
 
 function App() {
     return (
@@ -17,8 +18,9 @@ function App() {
                         <Route exact path="/">
                             {<Redirect to="/profile" />}
                         </Route>
-                        <Route path="/profile" component={Profile} />
-                        <Route path="/messenger" component={Messenger} />
+                        <Route path="/profile" component={ProfilePage} />
+                        <Route path="/messenger" component={MessengerPage} />
+                        <Route path="/users" component={UsersPage} />
                     </Switch>
                 </div>
             </Fragment>

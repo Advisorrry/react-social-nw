@@ -1,7 +1,7 @@
 import React from 'react'
-import './messanger.scss'
+import '../scss/app.scss'
 
-export function Messenger() {
+export function MessengerPage() {
     return (
         <div class="messanger__container" ng-cloak ng-app="chatApp">
             <div class="chatbox" ng-controller="MessageCtrl as chatMessage">

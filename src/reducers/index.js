@@ -1,5 +1,5 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
-import addPostSlice from './reducers'
+import addPostSlice from './addProfilePostsReducer'
 
 const middleware = getDefaultMiddleware({
     immutableCheck: false,
@@ -7,7 +7,7 @@ const middleware = getDefaultMiddleware({
     thunk: true,
 })
 
-export const store = configureStore({
+export default configureStore({
     reducer: {
         addPost: addPostSlice
     },

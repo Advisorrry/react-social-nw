@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addPostAC } from '../../redux/reducers'
-import './mypost.scss'
+import { addPostAC } from '../../reducers/addProfilePostsReducer'
 import { MyPosts } from './MyPosts'
 
 export function AddPosts() {
@@ -9,13 +8,25 @@ export function AddPosts() {
     const addPostSelector = useSelector((state) => state.addPost.items)
     const [initialValue, setInitialValue] = React.useState('')
 
-    const handleAddNewPost = () => {
+    // const handleAddNewPost = () => {
+    //     if (initialValue === '') {
+    //         return 
+    //     }
+    //     dispatch(addPostAC(initialValue))
+    //     setInitialValue('')
+    // }
+
+    const handleAddNewPost = useCallback(() => {
         if (initialValue === '') {
             return 
         }
         dispatch(addPostAC(initialValue))
         setInitialValue('')
-    }
+    }, [dispatch, initialValue])
+
+    const handleChangeValue = useCallback((e) => {
+        setInitialValue(e.target.value)
+    }, [])
 
     return (
         <div className="addposts">
@@ -26,7 +37,7 @@ export function AddPosts() {
                         placeholder="Leave a comment here"
                         id="floatingTextarea"
                         value={initialValue}
-                        onChange={(e) => setInitialValue(e.target.value)}
+                        onChange={handleChangeValue}
                     />
                     <label htmlFor="floatingTextarea">Новый пост</label>
                     <button 
@@ -38,8 +49,9 @@ export function AddPosts() {
                     </button>
                 </form>
                 {addPostSelector.map((post, idx) => {
-                    return <MyPosts postText={post} key={idx} />
+                    return <MyPosts postText={post} idx={idx} key={idx} />
                 })}
+                
             </div>         
         </div>
     )
