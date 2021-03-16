@@ -9,7 +9,7 @@ const addPostSlice = createSlice({
   initialState,
   reducers: {
     addPostAC(state, action) {
-      state.items.push(action.payload)
+      state.items.unshift(action.payload)
     },
   },
 })
