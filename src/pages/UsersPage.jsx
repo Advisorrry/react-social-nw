@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Users() {
+export function UsersPage() {
     return (
         <div>
             
@@ -8,4 +8,4 @@ function Users() {
     )
 }
 
-export default Users
+

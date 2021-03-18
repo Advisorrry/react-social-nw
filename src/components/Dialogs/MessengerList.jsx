@@ -14,7 +14,7 @@ function MessangerList() {
             <ul className="messanger-list">
                 {nameList.map((item) => (
                     <li key={item.id}>
-                        <Link to={`/messanger/${item.name}`}>{item.name}</Link>
+                        <Link to={`/messenger/${item.name}`}>{item.name}</Link>
                     </li>
                 ))}
             </ul>

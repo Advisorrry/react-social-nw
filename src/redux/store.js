@@ -1,5 +1,5 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
-import addPostSlice from './reducers'
+import addPostSlice from './addPostReducer'
 
 const middleware = getDefaultMiddleware({
     immutableCheck: false,

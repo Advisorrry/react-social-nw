@@ -8,11 +8,11 @@ const addPostSlice = createSlice({
   name: 'counter',
   initialState,
   reducers: {
-    addPostAC(state, action) {
+    addProfilePostAC(state, action) {
       state.items.unshift(action.payload)
     },
   },
 })
 
-export const { addPostAC } = addPostSlice.actions
+export const { addProfilePostAC } = addPostSlice.actions
 export default addPostSlice.reducer

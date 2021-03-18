@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addPostAC } from '../../redux/reducers'
-import './mypost.scss'
+import { addProfilePostAC } from '../../redux/addPostReducer'
 import { MyPosts } from './MyPosts'
 
 export function AddPosts() {
@@ -13,7 +12,7 @@ export function AddPosts() {
         if (initialValue === '') {
             return 
         }
-        dispatch(addPostAC(initialValue))
+        dispatch(addProfilePostAC(initialValue))
         setInitialValue('')
     }
 

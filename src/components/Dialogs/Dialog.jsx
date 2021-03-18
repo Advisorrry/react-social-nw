@@ -26,8 +26,6 @@ function Dialog() {
         </div>
     )
 }
-//<div className="messanger-dialogs-ava"></div>
-//<div className="messanger-dialogs-name">Артем</div>
-//<div className="messanger-dialogs-text">какой-то длинный текст</div>
+
 
 export default Dialog

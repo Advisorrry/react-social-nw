@@ -1,9 +1,8 @@
 import React from 'react'
-import Dialog from './Dialog'
-import './messanger.scss'
-import MessengerList from './MessengerList'
+import Dialog from '../components/Dialogs/Dialog'
+import MessengerList from '../components/Dialogs/MessengerList'
 
-export function Messenger() {
+export function MessengerPage() {
     return (
         <div className="messanger-container ">
             <MessengerList />
